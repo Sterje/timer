@@ -19,7 +19,9 @@ function Timer() {
                 setElapsedTime(Date.now() - startTimeRef.current)
             }, 10);
         }
-
+        
+        // Denna funktion förstår jag inte helt. Timern funkar utan denna del men har förstått att det bör finnas
+        // annars kan det uppstå problem när komponenten unmountas???
         return () => {
             clearInterval(intervalIdRef.current)
         }
@@ -30,21 +32,18 @@ function Timer() {
     function start() {
         setIsRunning(true);
         startTimeRef.current = Date.now() - elapsedTime;
-        
-        
-
     }
+
     // Stoppar timern. Sätter IsRunning till false med hjälp av setIsRunning i useState
     function stop() {
         setIsRunning(false)
-
     }
+
     // Nollställer timern. Sätter elapsedTime till 0 med setElapsedTime i useState. Stoppar timern genom att
     // sätta isRunning till 0 med setIsRunning till false genom useState
     function reset() {
         setElapsedTime(0);
         setIsRunning(false);
-
     }
 
     // Formaterar tiden 
@@ -69,16 +68,16 @@ function Timer() {
             <section className="title">
                 <h1>TIMER</h1>
             </section>
+            {/* i display section visa resultatet i formatTime funktionen */}
             <section className="display">{formatTime()}</section>
             <section className="controls">
+                {/* Varje knapp är kopplad till respektive funktion */}
                 <button onClick={start} className="start-button">Start</button>
                 <button onClick={stop} className="stop-button">Stop</button>
                 <button onClick={reset} className="reset-button">Reset</button>
             </section>
         </section>
-       
-        
     )
-
 }
+
 export default Timer
