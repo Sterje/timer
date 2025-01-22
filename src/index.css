@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(64, 63, 63, 0.75),rgba(0,0,0,0.75)),url('./assets/track-and-field-1867053_1920.jpg');
+  /* background-image: url('./assets/track-and-field-1867053_1920.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  height: 100vh;
+  
+}
+
+.timer {
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 50px;
+  background: transparent;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+ 
+  padding: 30px;
+}
+
+.display {
+  font-size: 5rem;
+  font-family: monospace;
+  font-weight: bold;
+  color:antiquewhite;
+  text-shadow: 5px 5px 5px 5px black;
+ 
+}
+
+.controls button {
+
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid;
+  border-radius: 50%;
+  outline: 0;
+   cursor: pointer;
+  color: #000;
+  transition: background-color 0.5s ease;
+}
+
+.start-button {
+  background-color: rgb(15, 228, 15);
+}
+
+.stop-button {
+  background-color: red;
+
+}
+
+.reset-button {
+  background-color: blue;
+}
+
+.title h1 {
+  font-size: 5rem;
+  font-family: "Audiowide";
+  color: antiquewhite;
+}
